@@ -1,0 +1,29 @@
+"***************************************************************
+" Plug intall packages
+"***************************************************************
+
+let g:plug_url_format = 'git@github.com:%s.git'
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+unlet g:plug_url_format
+
+
+"***************************************************************
+" Config plugins
+"***************************************************************
+
+" ctrlp plugin
+set runtimepath^=~/.vim/plugged/ctrlp.vim
+
+" syntastic plugin
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" syntastic slint plugin
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
